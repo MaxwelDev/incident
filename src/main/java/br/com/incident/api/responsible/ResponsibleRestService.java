@@ -15,7 +15,7 @@ public class ResponsibleRestService {
 
     private final ResponsibleService responsibleService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "front-incident.surge.sh")
     @RequestMapping("im-day")
     public List<Responsible> getAllResponsible() {
         return responsibleService.findAllResponsible();
