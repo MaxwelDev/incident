@@ -14,9 +14,12 @@ import java.util.List;
 public class Schedule {
 
     private static final String FRIDAY = "FRIDAY";
+    private static final String TIME_ZONE = "America/Sao_Paulo";
+
     private final ResponsibleRepository responsibleRepository;
 
-    @org.springframework.scheduling.annotation.Scheduled(cron = "0 0 1 * * *")
+
+    @org.springframework.scheduling.annotation.Scheduled(cron = "0 0 1 * * *", zone = TIME_ZONE)
     public void updateDate() {
 
         List<Responsible> responsible = responsibleRepository.findResponsible();
