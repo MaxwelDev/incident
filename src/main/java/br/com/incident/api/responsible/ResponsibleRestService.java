@@ -1,11 +1,14 @@
 package br.com.incident.api.responsible;
 
+import br.com.incident.system.SwaggerConstant;
 import br.com.incident.domain.orm.Responsible;
 import br.com.incident.service.ResponsibleService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,8 +18,18 @@ public class ResponsibleRestService {
 
     private final ResponsibleService responsibleService;
 
+    @GetMapping
+    @ApiOperation(value = "List Responsible", response = Responsible.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = SwaggerConstant.HTTP_200_MSG),
+            @ApiResponse(code = 400, message = SwaggerConstant.HTTP_400_MSG),
+            @ApiResponse(code = 401, message = SwaggerConstant.HTTP_401_MSG),
+            @ApiResponse(code = 403, message = SwaggerConstant.HTTP_403_MSG),
+            @ApiResponse(code = 500, message = SwaggerConstant.HTTP_500_MSG)
+    })
+    @RequestMapping("/im-day")
+    @ResponseStatus(HttpStatus.OK)
     @CrossOrigin(origins = "http://front-incident.surge.sh")
-    @RequestMapping("im-day")
     public List<Responsible> getAllResponsible() {
         return responsibleService.findAllResponsible();
     }

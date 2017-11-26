@@ -1,4 +1,4 @@
-package br.com.incident;
+package br.com.incident.system;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
