@@ -20,10 +20,8 @@ public class Schedule {
     private final ResponsibleRepository responsibleRepository;
 
 
-    @org.springframework.scheduling.annotation.Scheduled(cron = "0 15 1 * * *", zone = TIME_ZONE)
+    @org.springframework.scheduling.annotation.Scheduled(cron = "0 10 0 * * *", zone = TIME_ZONE)
     public void updateDate() {
-
-        System.err.println("Test Schedule");
 
         List<Responsible> responsible = responsibleRepository.findResponsible();
         Responsible first = responsible.get(0);
