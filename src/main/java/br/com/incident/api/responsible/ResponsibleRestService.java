@@ -18,7 +18,6 @@ public class ResponsibleRestService {
 
     private final ResponsibleService responsibleService;
 
-    @GetMapping
     @ApiOperation(value = "List Responsible", response = Responsible.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = SwaggerConstant.HTTP_200_MSG),
@@ -27,7 +26,7 @@ public class ResponsibleRestService {
             @ApiResponse(code = 403, message = SwaggerConstant.HTTP_403_MSG),
             @ApiResponse(code = 500, message = SwaggerConstant.HTTP_500_MSG)
     })
-    @RequestMapping("/im-day")
+    @RequestMapping(value = "/im-day", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @CrossOrigin(origins = "http://front-incident.surge.sh")
     public List<Responsible> getAllResponsible() {
