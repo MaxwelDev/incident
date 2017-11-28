@@ -54,7 +54,7 @@ public class ResponsibleServiceImp implements ResponsibleService {
         }
 
         Responsible responsibleYesterday = responsibles.stream().filter(item ->
-                responsibles.get(0).getPosition()-1 == item.getPosition())
+                new Integer(responsibles.get(0).getPosition().intValue()-1).equals(item.getPosition()))
                 .collect(Collectors.toList()).get(0);
 
         Responsible yesterday = new Responsible();
