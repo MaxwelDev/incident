@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -52,9 +53,13 @@ public class ResponsibleServiceImp implements ResponsibleService {
 
         }
 
+        Responsible responsibleYesterday = responsibles.stream().filter(item ->
+                responsibles.get(0).getPosition()-1 == item.getPosition())
+                .collect(Collectors.toList()).get(0);
+
         Responsible yesterday = new Responsible();
 
-        yesterday.setName(responsibles.get(responsibles.size()-1).getName());
+        yesterday.setName(responsibleYesterday.getName());
         yesterday.setDate(responsibles.get(0).getDate().minusDays(1));
         yesterday.setPosition(responsibles.get(responsibles.size()-1).getPosition());
         yesterday.setId(responsibles.get(responsibles.size()-1).getId());
