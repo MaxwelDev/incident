@@ -18,7 +18,7 @@ Para rodar esse projeto localmente você precisa seguir as seguintes instruçõe
 - Projeto foi desenvolvido utilizando a IDE IntelliJ que pode ser encontrada na seguinte url https://www.jetbrains.com/idea/, o projeto pode ser executado em qualquer outra IDE como Eclipse, NetBeans, ou qualquer outra desde que a mesma tenha suporte a Java. Seja qual for a sua escolha é necessária a instalação de um plugin que seja compativel com o lombok (https://projectlombok.org/) para que você consiga editar os códigos. Caso você queira apenas executar o projeto, você pode iniciar a aplicação que ela funcionara normalmente. 
 
 
-![Alt Text](http://eshareload.com/images/items/others/IntelliJ%20IDEA%202016.2.png)</br></br></br>
+![Alt Text](https://confluence.jetbrains.com/download/attachments/10818/IDEADEV?version=6&modificationDate=1449747979000&api=v2)</br></br></br>
 
 - Caso você queira mais praticidade você pode rodar o projeto através do Docker, você apenas precisará ter o mesmo instalado para que consiga executar a aplicação, nesta url https://docs.docker.com/engine/installation/ você encontra instruções para a instalação do docker. Após ter instalado o docker, certifiquesse que o possui o maven instalado em sua maquina e ai você precisa apenas entrar na pasta do projeto após ter clonado o mesmo e executar o comando "mvn package" para empacotador o projeto, depois executar o comando "sudo docker:build" para que a imagem seja gerada, em seguida utilize o comando "docker run -p 8080:8080 -t incident --name incident", neste momento o docker subirá a aplicação que ficará disponível na porta 8080 da sua maquina. O projeto se conectará ao banco de dados que está hospedado no heroku, portanto uma pequena demora na subida do projeto é normal.
 
