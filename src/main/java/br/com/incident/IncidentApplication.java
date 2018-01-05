@@ -9,9 +9,11 @@ import java.util.TimeZone;
 @SpringBootApplication
 public class IncidentApplication {
 
+	private static final String ZONE = "America/Sao_Paulo";
+
 	@PostConstruct
 	void started() {
-		TimeZone.setDefault(TimeZone.getTimeZone("America/Sao_Paulo"));
+		TimeZone.setDefault(TimeZone.getTimeZone(ZONE));
 	}
 
 	public static void main(String[] args) {
