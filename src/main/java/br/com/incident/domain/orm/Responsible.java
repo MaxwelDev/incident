@@ -20,7 +20,7 @@ public class Responsible implements Serializable {
     private String name;
 
     @ApiModelProperty(readOnly = true)
-    private Integer position;
+    private int position;
 
     @ApiModelProperty(readOnly = true)
     private LocalDate date;

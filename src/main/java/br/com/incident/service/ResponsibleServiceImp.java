@@ -42,19 +42,20 @@ public class ResponsibleServiceImp implements ResponsibleService {
         if(responsibles.get(0).getDate().getDayOfWeek().toString().equals(MONDAY)) {
 
             Responsible saturday = new Responsible();
+            saturday.setPosition(6);
             saturday.setName("Phone");
             saturday.setDate(responsibles.get(0).getDate().minusDays(2));
             responsibles.add(responsibles.size(), saturday);
 
             Responsible sunday = new Responsible();
+            sunday.setPosition(7);
             sunday.setName("Phone");
             sunday.setDate(responsibles.get(0).getDate().minusDays(1));
             responsibles.add(responsibles.size(), sunday);
-
         }
 
         Responsible responsibleYesterday = responsibles.stream().filter(item ->
-                new Integer(responsibles.get(0).getPosition().intValue()-1).equals(item.getPosition()))
+                new Integer(responsibles.get(0).getPosition()-1).equals(item.getPosition()))
                 .collect(Collectors.toList()).get(0);
 
         Responsible yesterday = new Responsible();
