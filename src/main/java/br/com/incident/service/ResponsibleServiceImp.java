@@ -14,6 +14,7 @@ public class ResponsibleServiceImp implements ResponsibleService {
 
     private static final String FRIDAY = "FRIDAY";
     private static final String MONDAY = "MONDAY";
+    private static final String SUNDAY = "SUNDAY";
 
     private final ResponsibleRepository responsibleRepository;
 
@@ -39,7 +40,8 @@ public class ResponsibleServiceImp implements ResponsibleService {
             }
         }
 
-        if(responsibles.get(0).getDate().getDayOfWeek().toString().equals(MONDAY)) {
+        if(responsibles.get(0).getDate().getDayOfWeek().toString().equals(MONDAY) &&
+                !responsibles.get(responsibles.size()-1).getDate().getDayOfWeek().toString().equals(SUNDAY)) {
 
             Responsible saturday = new Responsible();
             saturday.setPosition(6);

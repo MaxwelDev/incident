@@ -28,7 +28,8 @@ public class ResponsibleRestService {
     })
     @RequestMapping(value = "/im-day", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    @CrossOrigin(origins = "http://incident.surge.sh")
+//    @CrossOrigin(origins = "http://incident.surge.sh")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Responsible> getAllResponsible() {
         return responsibleService.findAllResponsible();
     }
